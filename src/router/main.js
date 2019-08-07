@@ -95,7 +95,6 @@ class MainComponents extends React.Component {
     }
     //数据初始化
     dataInit (props) {
-        console.log(props)
         let {addTabView,addBreadCrumbs,setOpenKeys} = props
         let pathname = props.location.pathname
         let router = filterRoutes(pathname)
@@ -110,7 +109,7 @@ class MainComponents extends React.Component {
     //获取用户信息
     async getUserInfo (cb){
         try {
-            await this.props.getUser(Cookie.get('Auth_Token'))
+            await this.props.getUser()
             cb && cb()
         }catch(e) {
             message.error(e)
@@ -134,7 +133,7 @@ class MainComponents extends React.Component {
         let {location: {pathname}, user} = this.props
         
         // 404
-        if (!isExistPath(allRoutes, pathname)) return <Redirect to='/error/404'/>
+        // if (!isExistPath(allRoutes, pathname)) return <Redirect to='/error/404'/>
         
         //当前路径路由信息
         let currRoute = getRoute(allRoutes, pathname)
@@ -146,7 +145,6 @@ class MainComponents extends React.Component {
             if (!Cookie.get('Auth_Token')) {
                 return <Redirect to={{ pathname: '/login' }} />
             }
-            
             // 获取用户信息
             if (!user) {
                 this.getUserInfo(() => {
@@ -164,7 +162,7 @@ class MainComponents extends React.Component {
         if (route) return <Redirect to={route.redirect}/>
 
         // 网页title
-        document.title = currRoute.name
+        // document.title = currRoute.name
 
         return (
             <Switch>

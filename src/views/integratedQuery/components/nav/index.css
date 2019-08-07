@@ -1,0 +1,70 @@
+.aclog {
+  padding: 40px 60px;
+}
+.aclog .Nav {
+  margin-bottom: 20px;
+}
+.nav {
+  display: flex;
+}
+.nav .navList {
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding-left: 30px;
+  width: 210px;
+  height: 64px;
+  margin-right: 20px;
+  box-shadow: 0px 5px 8px 0px rgba(0, 31, 54, 0.03);
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.nav .navList i {
+  display: block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  line-height: 34px;
+  margin-right: 8px;
+}
+.nav .navList:nth-of-type(1) i {
+  color: #5a78ed;
+  background: rgba(90, 120, 237, 0.15);
+}
+.nav .navList:nth-of-type(2) i {
+  color: #fd9100;
+  background: #fdebd3;
+}
+.nav .navList:nth-of-type(3) i {
+  color: #34b325;
+  background: #dcf6d9;
+}
+.nav .navList:nth-of-type(4) i {
+  color: #8363fd;
+  background: #e2dbfd;
+}
+.nav .navList span {
+  font-size: 16px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #666666;
+  line-height: 64px;
+}
+.nav .navList.active {
+  background-color: #5A78ED;
+  box-shadow: 0px 5px 8px 0px rgba(66, 101, 237, 0.03);
+}
+.nav .navList.active i {
+  color: #5a78ed;
+  background: #ffffff;
+}
+.nav .navList.active span {
+  color: #fff;
+}

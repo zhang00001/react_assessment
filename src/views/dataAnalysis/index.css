@@ -1,0 +1,32 @@
+.dataAns {
+  padding: 40px 60px;
+  min-height: calc(100vh - 118px);
+}
+.dataAns .nav {
+  margin-bottom: 20px;
+}
+.dataAns .content {
+  box-sizing: border-box;
+  padding: 30px 40px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 5px 8px 0px rgba(0, 31, 54, 0.03);
+  border-radius: 8px;
+}
+.dataAns .content .Progress {
+  display: flex;
+  justify-content: space-around;
+}
+.dataAns .content .ant-tabs-bar {
+  border: 0;
+  margin-bottom: 50px;
+}
+.dataAns .content .ant-tabs-ink-bar {
+  width: 20px !important;
+  height: 3px;
+  background: #5a78ed;
+  border-radius: 2px;
+}
+.dataAns .content .ant-tabs-tab {
+  padding: 11px 0;
+}

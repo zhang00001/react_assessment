@@ -1,0 +1,65 @@
+.aclog {
+  padding: 40px 60px;
+  min-height: calc(100vh - 118px);
+}
+.aclog .nav {
+  margin-bottom: 20px;
+}
+.aclog .content {
+  box-sizing: border-box;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 5px 8px 0px rgba(0, 31, 54, 0.03);
+  border-radius: 8px;
+  padding: 30px 40px;
+  background-color: #fff;
+}
+.aclog .content .toolsBlock {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.aclog .content .toolsBlock button {
+  width: 110px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #ffffff;
+  border: 0;
+  box-sizing: border-box;
+}
+.aclog .content .toolsBlock button i {
+  font-size: 14px;
+  margin-right: 6px;
+}
+.aclog .content .toolsBlock .btn {
+  background: #5a78ed;
+}
+.aclog .content .toolsBlock .lessBtn {
+  margin-left: 10px;
+  background: rgba(90, 120, 237, 0.1);
+  color: #5a78ed;
+}
+.aclog .content .toolsBlock .searchs {
+  display: flex;
+  align-items: center;
+}
+.aclog .content .toolsBlock .searchs .searchBtn {
+  background: #ff8453;
+}
+.aclog .content .toolsBlock .searchs input,
+.aclog .content .toolsBlock .searchs .ant-select-selection {
+  width: 240px;
+  height: 36px;
+  line-height: 36px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.aclog .content .toolsBlock .searchs input .ant-select-selection__rendered,
+.aclog .content .toolsBlock .searchs .ant-select-selection .ant-select-selection__rendered {
+  height: 100%;
+}

@@ -1,5 +1,24 @@
-.breadCrumbs {
-    .ant-breadcrumb-separator {
-        margin: 0 4px
+.sideBar {
+    display: flex !important;
+    width: 720px;
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 68px;
+        // background: rgba(255, 255, 255, .1);
+        font-size: 16px;
+        font-family: MicrosoftYaHei;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        line-height: 44px;
+        border:0;
+        &.active{
+          background: #3B5BD5
+        }
+        &:active{
+          background: #3B5BD5
+        }
     }
 }

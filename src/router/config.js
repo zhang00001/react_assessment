@@ -1,12 +1,18 @@
 import asyncComponent from './asyncComponent'
 
+
+
 const _import_components = file => asyncComponent(() => import(`components/${file}`))
 
 const _import_views = file => asyncComponent(() => import(`views/${file}`))
 
-const setChildrenRoles = routes => routes.map(route => {
-    let role = route.role
-    if (!role) return route
+const setChildrenRoles = routes => routes.map((route, index) => {
+    let role = route.role;
+    console.log(role)
+
+    if (!role) {
+        return route
+    }
 
     let fn = (children, role) => {
         return children.map(child => {
@@ -27,109 +33,181 @@ const setChildrenRoles = routes => routes.map(route => {
 // react-router-config
 const asyncRouterMapList = [
     {
-        path: '/auth',
+        path: '/assessmentCatalog',
         login: true,
         layout: true,
-        icon: 'lock',
-        name: '权限管理',
-        role: ['admin'],
-        component: _import_views('Auth')
-    },
-    {
-        path: '/knowledge',
-        login: true,
-        layout: true,
-        icon: 'calendar',
-        name: 'react知识点',
-        redirect: '/knowledge/syntax',
+        name: '考核目录',
+        redirect: '/assessmentCatalog/Catalog',
         children: [
-            { path: '/knowledge/syntax', component: _import_views('Knowledge/Syntax'), name: '常用语法' },
-            { path: '/knowledge/life-cycle', component: _import_views('Knowledge/LifeCycle'), name: '生命周期' },
-            { path: '/knowledge/create-component', component: _import_views('Knowledge/CreateComponent'), name: '组件写法' },
-            { path: '/knowledge/binding', component: _import_views('Knowledge/Binding'), name: '双向绑定' },
-            { path: '/knowledge/redux', component: _import_views('Knowledge/Redux'), name: 'Redux' },
-            { path: '/knowledge/async', component: _import_views('Knowledge/AsyncComponent'), name: '按需加载' },
-            { path: '/knowledge/request', component: _import_views('Knowledge/Request'), name: '网络请求' }
+            {
+                path: '/assessmentCatalog/index',
+                component: _import_views('assessmentCatalog/index'),
+                name: '考核目录'
+            },
+            {
+                path: '/assessmentCatalog/Catalog',
+                component: _import_views('assessmentCatalog/index'),
+                name: '考核目录',
+            },
+            {
+                path: '/assessmentCatalog/AddClass',
+                component: _import_views('assessmentCatalog/index'),
+                name: '考核目录 > 加分项'
+            },
+            {
+                path: '/assessmentCatalog/SubClass',
+                component: _import_views('assessmentCatalog/index'),
+                name: '考核目录 > 减分项'
+            },
+            {
+                path: '/assessmentCatalog/DownClass',
+                component: _import_views('assessmentCatalog/index'),
+                name: '考核目录 > 降档项'
+            },
+            {
+                path: '/assessmentCatalog/AddCheckList',
+                component: _import_views('assessmentCatalog/pages/Catalog/AddCheckList/index'),
+                name: '考核目录 > 添加考核目录'
+            },
+            {
+              path: '/assessmentCatalog/EditCheckList',
+              component: _import_views('assessmentCatalog/pages/Catalog/EditCheckList/index'),
+              name: '考核目录 > 修改考核目录'
+            },
         ]
     },
     {
-        path: '/components',
+        path: '/assessment',
         login: true,
         layout: true,
-        icon: 'database',
-        name: '组件',
-        redirect: '/components/github',
+        name: '考核评价',
+        redirect: '/assessment/publishTask',
         children: [
-            { path: '/components/github', component: _import_views('Components/Github'), name: 'Github' },
-            { path: '/components/icon-svg', component: _import_views('Components/Icon-svg'), name: 'svg图标' },
+            { path: '/assessment/index', component: _import_views('assessment/index'), name: '考核评价' },
+            { path: '/assessment/publishTask', component: _import_views('assessment/index'), name: '发布任务' },
+            { path: '/assessment/selfEvaluation', component: _import_views('assessment/index'), name: '企业自评' },
+            { path: '/assessment/selfEvaluationEdit/:checkdir_id/:level', component: _import_views('assessment/page/selfEvaluationEdit'), name: '自评' },
+            { path: '/assessment/selfEvaluationView/:checkdir_id/:level', component: _import_views('assessment/page/selfEvaluationView'), name: '查看自评' },
+            { path: '/assessment/selfEvaluationReport', component: _import_views('assessment/index'), name: '自评报告' },
+            { path: '/assessment/selfEvaluationReportEdit/:id', component: _import_views('assessment/page/selfEvaluationReportEdit'), name: '编写自评报告' },
+            { path: '/assessment/selfEvaluationReportView/:id', component: _import_views('assessment/page/selfEvaluationReportView'), name: '查看自评报告' },
+            { path: '/assessment/postOnSiteAssessment', component: _import_views('assessment/index'), name: '发布现场考核' },
+            { path: '/assessment/siteEvaluation', component: _import_views('assessment/index'), name: '现场评价' },
+            { path: '/assessment/siteEvaluationEdit/:checkdir_id/:level/:org_id', component: _import_views('assessment/page/siteEvaluationEdit'), name: '现场评价' },
+            { path: '/assessment/siteEvaluationView/:checkdir_id/:level/:org_id', component: _import_views('assessment/page/siteEvaluationView'), name: '现场评价' },
+            { path: '/assessment/bonus', component: _import_views('assessment/index'), name: '加分项' },
+            { path: '/assessment/bonusEdit/:year/:id', component: _import_views('assessment/page/bonusEdit'), name: '加分项' },
+            { path: '/assessment/bonusView/:year/:id', component: _import_views('assessment/page/bonusView'), name: '加分项' },
+            { path: '/assessment/implementScores', component: _import_views('assessment/index'), name: '日常落实情况打分' },
+            { path: '/assessment/dailyScore/:year/:org_id', component: _import_views('assessment/page/dailyScore'), name: '日常打分' },
+            { path: '/assessment/minusPoints', component: _import_views('assessment/index'), name: '减分项' },
+            { path: '/assessment/minusPointsEdit/:year/:id', component: _import_views('assessment/page/minusPointsEdit'), name: '减分' },
+            { path: '/assessment/minusPointsView/:year/:id', component: _import_views('assessment/page/minusPointsView'), name: '减分' },
+            { path: '/assessment/opinion', component: _import_views('assessment/index'), name: '初评意见' },
+            { path: '/assessment/opinionEdit/:year/:org_id', component: _import_views('assessment/page/opinionEdit'), name: '初评意见' },
+            { path: '/assessment/downgrade', component: _import_views('assessment/index'), name: '降档' },
+            { path: '/assessment/downgradeEdit/:year/:id', component: _import_views('assessment/page/downgradeEdit'), name: '降档' },
+            { path: '/assessment/downgradeView/:year/:id', component: _import_views('assessment/page/downgradeView'), name: '降档' },
+            { path: '/assessment/evaluationResults', component: _import_views('assessment/index'), name: '评价结果' },
+            { path: '/assessment/evaluationResultsEdit/:year/:org_id', component: _import_views('assessment/page/evaluationResultsEdit'), name: '评价结果' },
         ]
     },
     {
-        path: '/animate',
+        path: '/dataAnalysis',
         login: true,
         layout: true,
-        icon: 'smile-o',
-        name: 'react动画',
-        role: ['animate'],
-        redirect: '/animate/fade',
+        name: '数据分析',
+        redirect: '/dataAnalysis/Rank',
         children: [
-            { path: '/animate/fade', component: _import_views('Animate/Fade'), name: '渐变' },
-            { path: '/animate/group-fade', component: _import_views('Animate/GroupFade'), name: '列表渐变' },
-            { path: '/animate/slide', component: _import_views('Animate/Slide'), name: '滑动' },
-            { path: '/animate/router-transition', component: _import_views('Animate/RouterTransition'), name: '路由过渡动画'}
+            {
+                path: '/dataAnalysis/index',
+                component: _import_views('dataAnalysis/index'),
+                name: '数据分析'
+            },
+            {
+                path: '/dataAnalysis/Rank',
+                component: _import_views('dataAnalysis/index'),
+                name: '考核排行榜'
+            },
+            {
+                path: '/dataAnalysis/Analysis',
+                component: _import_views('dataAnalysis/index'),
+                name: '考核数据分析'
+            },
+            {
+                path: '/dataAnalysis/Progress',
+                component: _import_views('dataAnalysis/index'),
+                name: '内评工作进度'
+            },
         ]
     },
     {
-        path: '/CSSModule',
+        path: '/integratedQuery',
         login: true,
         layout: true,
-        icon: 'layout',
-        name: 'CSSModule',
-        redirect: '/CSSModule/normal',
+        name: '综合查询',
+        redirect: '/integratedQuery/queryCategory',
         children: [
-            { path: '/CSSModule/normal', component: _import_views('CSSModule/normal'), name: '常规用法' },
-            { path: '/CSSModule/react-css-modules', component: _import_views('CSSModule/react-css-modules'), name: 'react-css-modules' },
+            { path: '/integratedQuery/index', component: _import_views('integratedQuery/index'), name: '考核目录查询' },
+            { path: '/integratedQuery/queryCategory', component: _import_views('integratedQuery/index'), name: '考核目录查询' },
+            { path: '/integratedQuery/queryRecord', component: _import_views('integratedQuery/index'), name: '考核记录查询' },
+            { path: '/integratedQuery/queryCompany', component: _import_views('integratedQuery/index'), name: '企业报告查询' },
         ]
     },
     {
-        path: '/editor',
+        path: '/systemSettings',
         login: true,
         layout: true,
         icon: 'edit',
-        name: '编辑器',
-        role: ['editor'],
-        redirect: '/editor/markdown',
+        name: '系统设置',
+        redirect: '/systemSettings/zzgl',
         children: [
-            { path: '/editor/markdown', component: _import_views('Editor/Markdown'), name: 'Markdown'},
-            { path: '/editor/draft', component: _import_views('Editor/Draft'), name: '富文本'}
+            { path: '/systemSettings/zzgl', component: _import_views('systemSettings/index'), name: '组织管理' },
+            { path: '/systemSettings/roleAdmin', component: _import_views('systemSettings/index'), name: '角色管理' },
+            { path: '/systemSettings/userAdmin', component: _import_views('systemSettings/index'), name: '用户管理' },
+            { path: '/systemSettings/levelAdmin', component: _import_views('systemSettings/index'), name: '分级管理' },
+            { path: '/systemSettings/addUser', component: _import_views('systemSettings/userAdmin/addUser'), name: '添加用户' },
+            { path: '/systemSettings/addRole', component: _import_views('systemSettings/roleAdmin/addRole'), name: '添加角色' },
+            { path: '/systemSettings/modifyAuth', component: _import_views('systemSettings/userAdmin/modifyAuth'), name: '修改权限' },
         ]
     },
     {
-        path: '/charts',
+        path: '/modifyAvater',
         login: true,
         layout: true,
-        icon: 'area-chart',
-        name: '图表',
-        redirect: '/charts/echarts',
-        children: [
-            { path: '/charts/echarts', component: _import_views('Charts/Echarts'), name: 'Echarts'},
-            { path: '/charts/recharts', component: _import_views('Charts/Recharts'), name: 'Recharts'}
-        ]
+        showOntab: true,
+        name: '修改头像',
+        hidden: true,
+        component: _import_views('Home/personInfo/modifyAvater')
     },
     {
-        path: '/error',
+        path: '/modifyInfo',
         login: true,
         layout: true,
-        icon: 'question-circle-o',
-        name: 'ErrorPage',
-        redirect: '/error/404',
-        children: [
-            { path: '/error/404', component: _import_views('Error/NotFound'), name: '404'},
-            { path: '/error/401', component: _import_views('Error/NotAuth'), name: '401'}
-        ]
+        showOntab: true,
+        name: '基本信息',
+        hidden: true,
+        component: _import_views('Home/personInfo/modifyInfo')
+    },
+    {
+        path: '/news',
+        login: true,
+        layout: true,
+        showOntab: true,
+        name: '消息列表',
+        hidden: true,
+        component: _import_views('Home/news')
+    },
+    {
+        path: '/modifyPassword',
+        login: true,
+        layout: true,
+        showOntab: true,
+        name: '修改密码',
+        hidden: true,
+        component: _import_views('Home/personInfo/modifyPassword')
     },
 ]
-
 export const constantRouterMap = [
     {
         path: '/login',
@@ -143,9 +221,10 @@ export const constantRouterMap = [
         exact: true,
         login: true,
         layout: true,
-        icon: 'user',
         name: '首页',
-        component: _import_views('Home')
+        component: _import_views('Home'),
+
+
     }
 ]
 export const asyncRouterMap = setChildrenRoles(asyncRouterMapList)

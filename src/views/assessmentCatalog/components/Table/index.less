@@ -1,0 +1,213 @@
+.TableUI {
+  background-color: #fff;
+  width: 100%;
+  .ant-table-thead {
+    box-sizing : border-box;
+    height     : 54px;
+    line-height: 54px;
+
+    th {
+      box-sizing  : border-box;
+      padding-top:0;
+      padding-bottom:0;
+      font-size   : 14px;
+      font-family : MicrosoftYaHei;
+      font-weight : 400;
+      color       : rgba(153, 153, 153, 1);
+      background  : rgba(251, 251, 251, 1);
+      border      : 0;
+      box-shadow  : 0px 1px 0px 0px rgba(238, 238, 238, 1);
+      border-right: 1px solid #EEEEEE;
+      border-top  : 1px solid #EEEEEE;
+
+      &:last-of-type {
+        border-right: 0
+      }
+    }
+  }
+
+  .ant-table-tbody {
+    tr {
+      td {
+        box-sizing: border-box;
+        font-size    : 14px;
+        font-family  : MicrosoftYaHei;
+        font-weight  : 400;
+        color        : rgba(51, 51, 51, 1);
+        border-bottom: 1px solid #EEEEEE;
+        border-right : 1px solid #EEEEEE;
+        .editable-cell-value-wrap{
+          padding-right: 0 !important;
+        }
+        &:last-of-type {
+          border-right: 0
+        }
+      }
+
+      &:nth-of-type(2n) {
+        background-color: #FAFBFE;
+      }
+    }
+
+    input {
+      background   : rgba(255, 255, 255, 1);
+      box-shadow   : 0px 0px 8px 0px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      border       : 0;
+    }
+
+    button {
+      text-align: center;
+      border    : 0;
+      padding   : 0;
+    }
+
+    .saveBtn {
+      width        : 50px;
+      height       : 28px;
+      background   : rgba(255, 132, 83, 1);
+      border-radius: 4px;
+      font-size    : 14px;
+      font-family  : MicrosoftYaHei;
+      font-weight  : 400;
+      color        : rgba(255, 255, 255, 1);
+      margin-right : 6px;
+    }
+
+    .canelBtn {
+      width        : 50px;
+      height       : 28px;
+      background   : rgba(248, 248, 248, 1);
+      border-radius: 4px;
+      font-size    : 14px;
+      font-family  : MicrosoftYaHei;
+      font-weight  : 400;
+      color        : rgba(153, 153, 153, 1);
+    }
+
+    .iconfont{
+      color: #FF8453;
+      margin-right: 16px;
+      cursor: pointer;
+      &:last-of-type{
+        margin: 0
+      }
+    }
+  }
+
+  .ant-table-footer {
+    background  : rgba(248, 248, 248, 1);
+    box-shadow  : 0px 1px 0px 0px rgba(238, 238, 238, 1);
+    // padding-left: 80px;
+
+    .deleteBtn {
+      cursor       : pointer;
+      width        : 60px;
+      height       : 30px;
+      background   : rgba(255, 255, 255, 1);
+      border       : 1px solid rgba(238, 238, 238, 1);
+      border-radius: 3px;
+      font-size    : 14px;
+      font-family  : MicrosoftYaHei;
+      font-weight  : 400;
+      color        : rgba(136, 136, 136, 1);
+      text-align   : center;
+      line-height  : 28px;
+    }
+  }
+
+  // 选中多选框或者label时，多选框的边框改变颜色
+  .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+  .ant-checkbox:hover .ant-checkbox-inner,
+  .ant-checkbox-input:focus+.ant-checkbox-inner {
+    border: 1px solid #FF8453;
+  }
+
+  // 选中时多选框样式
+  .ant-checkbox-checked .ant-checkbox-inner,
+  .ant-checkbox-indeterminate .ant-checkbox-inner {
+    background-color: #FF8453;
+    border          : 1px solid #FF8453;
+  }
+
+  .ant-checkbox-checked::after {
+    border: 1px solid #FF8453;
+  }
+
+  .ant-checkbox.ant-checkbox-indeterminate .ant-checkbox-inner {
+    background-color: #fff;
+  }
+
+  .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+    background-color: #FF8453;
+  }
+
+  .ant-table-selection-column {
+    width  : 60px !important;
+    // padding: 0 !important;
+  }
+
+  .ant-pagination {
+    input {
+      background   : rgba(255, 255, 255, 1);
+      border       : 1px solid rgba(238, 238, 238, 1);
+      border-radius: 3px;
+    }
+    .prevBtn,.nextBtn{
+      box-sizing:border-box;
+      width:46px;
+      height:32px;
+      line-height: 30px;
+      background:rgba(255,255,255,1);
+      border:1px solid rgba(238,238,238,1);
+      border-radius:3px;
+      color:#DDDDDD;
+      i{
+        font-size:12px;
+      }
+    }
+    .ant-pagination-disabled{
+      .prevBtn,.nextBtn{
+        background:rgba(248,248,248,1);
+        border:0
+      }
+    }
+  }
+
+  .ant-pagination-item {
+    box-sizing: border-box;
+    background   : rgba(255, 255, 255, 1);
+    border       : 1px solid rgba(238, 238, 238, 1);
+    border-radius: 3px;
+    a{
+      font-size:14px;
+      font-family:MicrosoftYaHei;
+      font-weight:400;
+      color:rgba(170,170,170,1);
+    }
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    .ant-pagination-item-link {
+      background   : rgba(255, 255, 255, 1);
+      border       : 1px solid rgba(238, 238, 238, 1);
+      border-radius: 3px;
+    }
+  }
+
+  .ant-pagination-item-active {
+    background-color: #5A78ED;
+    border: 0;
+    a {
+      color: #fff;
+    }
+  }
+
+  .ant-pagination-total-text {
+    font-size  : 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color      : rgba(102, 102, 102, 1);
+  }
+}

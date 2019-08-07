@@ -1,0 +1,35 @@
+.AddCheckList {
+  width: calc(100vw - 120px);
+  min-height: calc(100vh - 198px);
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0px 5px 8px 0px rgba(0, 31, 54, 0.03);
+  border-radius: 8px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  padding: 80px 0;
+}
+.AddCheckList .ant-form-item {
+  display: flex;
+  justify-content: center;
+}
+.AddCheckList .ant-form-item .ant-btn {
+  margin-top: 40px;
+  width: 160px;
+  height: 46px;
+  line-height: 46px;
+  background: #f8f8f8;
+  border-radius: 4px;
+  padding: 0;
+  border: 0;
+  margin-right: 30px;
+  font-size: 16px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #999999;
+}
+.AddCheckList .ant-form-item .ant-btn-primary {
+  background: #5a78ed;
+  color: #f8f8f8;
+  border: 0;
+}

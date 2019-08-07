@@ -1,0 +1,121 @@
+.topScroll{
+  height: 250px;
+  overflow: hidden;
+  .show{
+    display: block;
+  }
+  .hide{
+    display: none;
+  }
+  .noFormData{
+    margin-top: 50px;
+  }
+  .topScrollList{
+    height:50px;
+    line-height: 50px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 1px 0px 0px rgba(248,248,248,1);
+    margin: 0 30px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size:14px;
+    border-bottom: 1px solid #F8F8F8;
+    .name{
+      width: 160px;
+      font-family:MicrosoftYaHei;
+      font-weight:400;
+      color:rgba(153,153,153,1);
+      margin-right: 90px;
+    }
+    .content{
+      font-size:14px;
+      font-weight:400;
+      color:rgba(51,51,51,1);
+      overflow: hidden;
+      span.iconfont{
+        margin-right: 19px;
+        font-size: 14px;
+      }
+      &.unread{
+        color: #999 !important;
+        .iconfont{
+          color: #DDD !important;
+        }
+      }
+    }
+    .author{
+      width: 110px;
+      margin-right: 126px;
+      b{
+        color: #CCCCCC;
+        font-weight: normal;
+      }
+      &.unread{
+        color: #CCCCCC;
+      }
+      &.read{
+        color: #333;
+      }
+    }
+    .rightIcon{
+      color: #FF8453;
+    }
+    // .read{
+    //   color: #FF8453 !important;
+    //   .iconfont:before{
+    //     color: #FF8453;
+    //   }
+    // }
+    // .unread{
+    //    color: #DDDDDD !important;
+    //    .iconfont:before{
+    //     color: #DDDDDD;
+    //   }
+    // }
+  }
+}
+.flex{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.align-center{
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-1{
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+.box-sizing{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.ellipicls{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.ellipicls-3{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+@media screen and (max-width: 1400px){
+  .topScroll{
+    .topScrollList{
+      margin: 0 12px;
+      .name{
+        margin-right: 20px;
+      }
+      .author{
+        margin-right: 20px;
+      }
+    }
+  }
+}

@@ -279,69 +279,7 @@ _import_('components/Home/index.js')
 
 ### 6. request
 我这里用到的是`axios`, 用`axios`做了个简单的拦截器
-
-```
-import axios from 'axios'
-import qs from 'qs'
-
-
-axios.defaults.withCredentials = true 
-
-// 发送时
-axios.interceptors.request.use(config => {
-    // 发起请求,可以进行动画啥的
-    return config
-}, err => {
-    return Promise.reject(err)
-})
-
-// 响应时
-axios.interceptors.response.use(response => response, err => Promise.resolve(err.response))
-
-// 检查状态码
-function checkStatus(res) { 
-    // 得到返回结果,结束动画啥的
-    if (res.status === 200 || res.status === 304) {
-        return res.data
-    }
-    return {
-        code: 0,
-        msg: res.data.msg || res.statusText,
-        data: res.statusText
-    }
-    return res
-}
-
-
-// 检查CODE值
-function checkCode(res) {
-    if (res.code === 0) {
-        throw new Error(res.msg)
-    }
-    
-    return res
-}
-
-export default {
-    get(url, params) {
-        if (!url) return
-        return axios({
-            method: 'get',
-            url: url,
-            params,
-            timeout: 30000
-        }).then(checkStatus).then(checkCode)
-    },
-    post(url, data) {
-        if (!url) return
-        return axios({
-            method: 'post',
-            url: url,
-            data: qs.stringify(data),
-            timeout: 30000
-        }).then(checkStatus).then(checkCode)
-    }
-}
+并加入了rxjs  采用subscribe 订阅返回值
 
 ```
 
@@ -529,6 +467,14 @@ class Bingding extends React.Component {
     )
   }
 }
+
+### 9. pipe处理
+
+```
+因为react 没有pipe 所有在filter 文件中 直接把方法挂载在原型上
+
+
+
 ```
 就是通过 `onChange` 事件 来触发 `this.setState` 重新渲染 render 方法
 
@@ -546,12 +492,4 @@ class Bingding extends React.Component {
 
 
 
-## 小结
-  国内比较火的两个框架，也勉强算是都接触了下，`vue`我是一直在用的，`react`算是年后刚接触的。
-  从我目前来看，`vue`比`react`开发起来确实要方便很多(可能用的比较多吧)。
-  因为`vue`很多常用的都是内置的。而`react`基本都要自己去寻找对应的模块。本身就只提供UI， 其他基本得自力更生。
-  主要是你经常一找能找着多个模块，你就不知道用哪个，还得一个个试水。当然，`react`的社区强大，这么都不是什么大问题。
 
-[在线观看地址](http://dzblog.cn/cases/react-admin/index.html)
-
-[博客地址](http://dzblog.cn/article/5aa7ef0e4f85ad06d2346688)

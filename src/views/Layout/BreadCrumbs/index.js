@@ -1,21 +1,27 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import { Breadcrumb } from 'antd'
+import { Link, withRouter } from 'react-router-dom'
 import './index.less'
 import connect from 'connect'
-const Item = Breadcrumb.Item
+import Item from 'antd/lib/list/Item';
+
+
+@withRouter
 @connect
 class BreadCrumbs extends React.Component {
-    render () {
-        let {breadCrumbs} = this.props.state
+
+    render() {
+  
+        let { routes } = this.props.state;
         return (
-            <Breadcrumb className={this.props.className}>
-                {breadCrumbs.map( (route, index) => {
-                	return index === breadCrumbs.length-1 ? <Item key={route.path}>{route.name}</Item> : 
-                		(<Item key={route.path}><Link to={route.path}>{route.name}</Link></Item>)
-                })}
-            </Breadcrumb>
+            <div className="sideBar">
+                {routes.filter(e=>e.login==true&&!e.showOntab).map((el, index) =>{
+                    return (<Link className={((this.props.location.pathname).indexOf(el.path+'/')===0)||el.path===this.props.location.pathname?'item active':'item'} key={index} to={el.path} >{el.name} </Link>) 
+                }
+                )}
+            </div>
         )
     }
 }
+
+
 export default BreadCrumbs

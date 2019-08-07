@@ -47,7 +47,7 @@ class SideBar extends React.Component {
                     >
                         <div className="logo">
                             <a target="_blank" style={{display: 'inline-block'}} href="https://github.com/cd-dongzi" alt="Github">
-                                <IconSvg iconName="github" className="logo_github"/>
+                                {/* <IconSvg iconName="github" className="logo_github"/> */}
                             </a>
                         </div>
                         <Menu 

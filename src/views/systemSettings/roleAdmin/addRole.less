@@ -1,0 +1,100 @@
+.addRolePage{
+    padding: 40px 60px;
+    background: white;
+    .addRole{
+        padding: 0 40px;
+        margin: 0 auto;
+        margin-top: 80px;
+        .inputItem{
+            width: 940px;
+            margin: 0 auto;
+            .roleName{
+                width: 100%;
+                margin-bottom: 28px;
+                .ant-form-item-label{
+                    display:inline-block;
+                    width: 85px;
+                    margin-right: 24px;
+                    margin-left: 16px;
+                    vertical-align: top;
+                }
+                .ant-form-item-control-wrapper{
+                    display: inline-block;
+                    width: 800px
+                }
+            }
+        }
+        
+        .roleCheckBoxWrap{
+            position: relative;
+            padding: 0 40px;
+            font-size: 0;
+            &:after{
+                position: absolute;
+                content: '';
+                left:0px;
+                right:0px;
+                background: #EEEEEE;
+                height: 1px;
+                top: 0;
+            }
+            .ant-checkbox-wrapper{
+                display: inline-block;
+                width: 25%;
+                vertical-align: top;
+                margin-right: 0;
+                margin-left: 0 !important;
+                margin-bottom: 0px;
+                &.FourMore{
+                    margin-bottom: 30px;
+                }
+            }
+        //    .ant-checkbox-checked::after{
+        //         border: 1px solid #FF8453;
+        //     }
+        //     .ant-checkbox-checked .ant-checkbox-inner {
+        //         background-color: #FF8453;
+        //         border-color: #FF8453;
+        //     }
+            .roleCheckbox{
+                width: 940px;
+                margin: 0 auto;
+                .roleCheckboxList{
+                    padding: 40px 0;
+    
+                }
+                .roleCheckBox{
+                    background: #F7F7F7;
+                    padding: 45px 0;
+                    padding-left: 30px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    .ant-checkbox-group-item{
+                        display: inline-block;
+                        width: 25%;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        .roleBtnWrap{
+            width: 940px;
+            margin: 60px auto;
+            text-align: center;
+            .ant-btn-primary{
+                margin-right: 30px;
+            }
+        }
+       
+    
+    }
+}
+
+// @media screen and (max-width:1400px){
+//     .addRole{
+//         width: 1200px;
+//         margin: 0 auto;
+    
+//     }
+// }

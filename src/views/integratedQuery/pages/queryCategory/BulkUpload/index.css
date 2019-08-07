@@ -1,0 +1,88 @@
+.ant-modal .ant-modal-header {
+  background: #f8f8f8;
+  border-radius: 4px;
+  font-size: 18px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #666666;
+  border: 0;
+}
+.ant-modal .ant-modal-body {
+  box-sizing: border-box;
+  padding: 24px 20px 60px;
+}
+.ant-modal .ant-modal-footer {
+  border: 0;
+  box-sizing: border-box;
+  padding: 0 20px 30px;
+}
+.ant-modal .ant-btn {
+  height: 38px;
+  line-height: 38px;
+  padding: 0 38px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.ant-modal .ant-btn .iconfont {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.ant-modal .ant-btn-primary {
+  border: 0;
+  background: #5a78ed;
+  border-radius: 4px;
+}
+.ant-modal .ant-alert {
+  border: 0;
+  padding-left: 30px;
+}
+.ant-modal .ant-alert .ant-alert-message {
+  font-size: 14px;
+  font-family: MicrosoftYaHei-Bold;
+  font-weight: bold;
+  color: #5a78ed;
+}
+.ant-modal .ant-alert .ant-alert-message .message {
+  display: flex;
+  align-items: center;
+}
+.ant-modal .ant-alert .ant-alert-message i {
+  font-size: 16px;
+  margin-right: 8px;
+}
+.ant-modal .ant-alert .ant-alert-description {
+  font-size: 14px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #5a78ed;
+  line-height: 28px;
+}
+.ant-modal .borderBox {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.ant-modal .borderBox .title {
+  font-size: 16px;
+  font-family: MicrosoftYaHei-Bold;
+  font-weight: bold;
+  color: #333333;
+}
+.ant-modal .borderBox .des {
+  font-size: 14px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: #999999;
+  line-height: 28px;
+}
+.ant-modal .borderBox .ant-btn {
+  padding: 0 22px;
+  line-height: 34px;
+  height: 34px;
+}

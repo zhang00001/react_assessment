@@ -1,0 +1,357 @@
+.dataAns{
+  padding: 40px 60px;
+  min-height: calc(~"100vh - 118px");
+  .nav {
+    margin-bottom: 20px
+  }
+  .content{
+    position: relative;
+    box-sizing: border-box;
+    width:100%;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 5px 8px 0px rgba(0,31,54,0.03);
+    border-radius:8px;
+    .YearPicker{
+      position: absolute;
+      right:40px;
+      top:30px;
+      height: 36px;
+    }
+    
+    button {
+      width        : 110px;
+      height       : 36px;
+      border-radius: 4px;
+      font-size    : 14px;
+      font-family  : MicrosoftYaHei;
+      font-weight  : 400;
+      color        : rgba(255, 255, 255, 1);
+      border       : 0;
+      box-sizing: border-box;
+      i{
+        font-size: 14px;
+        margin-right: 6px;
+      }
+    }
+
+    .btn {
+      background: rgba(90, 120, 237, 1);
+    }
+    .searchBlock{
+      position: absolute;
+      right: 40px;
+      top: 30px;
+      display: flex;
+      .ant-select{
+        width:240px;
+        height:36px;
+        .ant-select-selection-selected-value,.ant-select-selection__rendered{
+          line-height: 34px;
+        }
+        .ant-select-selection{
+          height: 100%;
+        }
+        div{
+          height: 100%;
+        }
+      }
+      .ant-calendar-picker{
+        cursor: pointer;
+        div{
+          height: 100%;
+          input{
+            height: 100%;
+          }
+        }
+      }
+      .searchBtn{
+        display:block;
+        width:110px;
+        height:36px;
+        background:rgba(255,132,83,1);
+        border-radius:4px;
+        font-size:14px;
+        font-family:MicrosoftYaHei;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        border:0;
+        i{
+          font-size: 14px;
+          margin-right:6px;
+        }
+      }
+    }
+    .lessBtn {
+      margin-left: 10px;
+      background : rgba(90, 120, 237, .1);
+      color      : rgba(90, 120, 237, 1);
+    }
+    .ant-table-thead {
+      box-sizing : border-box;
+      height     : 54px;
+      line-height: 54px;
+  
+      th {
+        box-sizing  : border-box;
+        padding-top:0;
+        padding-bottom:0;
+        font-size   : 14px;
+        font-family : MicrosoftYaHei;
+        font-weight : 400;
+        color       : rgba(153, 153, 153, 1);
+        background  : rgba(251, 251, 251, 1);
+        border      : 0;
+        box-shadow  : 0px 1px 0px 0px rgba(238, 238, 238, 1);
+        border-right: 1px solid #EEEEEE;
+        border-top  : 1px solid #EEEEEE;
+  
+        &:last-of-type {
+          border-right: 0
+        }
+      }
+    }
+  
+    .ant-table-tbody {
+      tr {
+        td {
+          box-sizing: border-box;
+          font-size    : 14px;
+          font-family  : MicrosoftYaHei;
+          font-weight  : 400;
+          color        : rgba(51, 51, 51, 1);
+          border-bottom: 1px solid #EEEEEE;
+          border-right : 1px solid #EEEEEE;
+          .editable-cell-value-wrap{
+            padding-right: 0 !important;
+          }
+          &:last-of-type {
+            border-right: 0
+          }
+        }
+  
+        &:nth-of-type(2n) {
+          background-color: #FAFBFE;
+        }
+      }
+  
+      input {
+        background   : rgba(255, 255, 255, 1);
+        box-shadow   : 0px 0px 8px 0px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        border       : 0;
+      }
+  
+      button {
+        text-align: center;
+        border    : 0;
+        padding   : 0;
+      }
+  
+      .saveBtn {
+        width        : 50px;
+        height       : 28px;
+        background   : rgba(255, 132, 83, 1);
+        border-radius: 4px;
+        font-size    : 14px;
+        font-family  : MicrosoftYaHei;
+        font-weight  : 400;
+        color        : rgba(255, 255, 255, 1);
+        margin-right : 6px;
+      }
+  
+      .canelBtn {
+        width        : 50px;
+        height       : 28px;
+        background   : rgba(248, 248, 248, 1);
+        border-radius: 4px;
+        font-size    : 14px;
+        font-family  : MicrosoftYaHei;
+        font-weight  : 400;
+        color        : rgba(153, 153, 153, 1);
+      }
+  
+      .iconfont{
+        color: #FF8453;
+        margin-right: 16px;
+        cursor: pointer;
+        &:last-of-type{
+          margin: 0
+        }
+      }
+    }
+  
+    .ant-table-footer {
+      background  : rgba(248, 248, 248, 1);
+      box-shadow  : 0px 1px 0px 0px rgba(238, 238, 238, 1);
+      // padding-left: 80px;
+  
+      .deleteBtn {
+        cursor       : pointer;
+        width        : 60px;
+        height       : 30px;
+        background   : rgba(255, 255, 255, 1);
+        border       : 1px solid rgba(238, 238, 238, 1);
+        border-radius: 3px;
+        font-size    : 14px;
+        font-family  : MicrosoftYaHei;
+        font-weight  : 400;
+        color        : rgba(136, 136, 136, 1);
+        text-align   : center;
+        line-height  : 28px;
+      }
+    }
+  
+    .ant-pagination {
+      input {
+        background   : rgba(255, 255, 255, 1);
+        border       : 1px solid rgba(238, 238, 238, 1);
+        border-radius: 3px;
+      }
+      .prevBtn,.nextBtn{
+        box-sizing:border-box;
+        width:46px;
+        height:32px;
+        line-height: 30px;
+        background:rgba(255,255,255,1);
+        border:1px solid rgba(238,238,238,1);
+        border-radius:3px;
+        color:#DDDDDD;
+        i{
+          font-size:12px;
+        }
+      }
+      .ant-pagination-disabled{
+        .prevBtn,.nextBtn{
+          background:rgba(248,248,248,1);
+          border:0
+        }
+      }
+    }
+  
+    .ant-pagination-item {
+      box-sizing: border-box;
+      background   : rgba(255, 255, 255, 1);
+      border       : 1px solid rgba(238, 238, 238, 1);
+      border-radius: 3px;
+      a{
+        font-size:14px;
+        font-family:MicrosoftYaHei;
+        font-weight:400;
+        color:rgba(170,170,170,1);
+      }
+    }
+  
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      .ant-pagination-item-link {
+        background   : rgba(255, 255, 255, 1);
+        border       : 1px solid rgba(238, 238, 238, 1);
+        border-radius: 3px;
+      }
+    }
+  
+    .ant-pagination-item-active {
+      background-color: #5A78ED;
+      border: 0;
+      a {
+        color: #fff;
+      }
+    }
+  
+    .ant-pagination-total-text {
+      font-size  : 14px;
+      font-family: MicrosoftYaHei;
+      font-weight: 400;
+      color      : rgba(102, 102, 102, 1);
+    }
+    .ant-tabs-bar{
+      border:0;
+      margin-bottom: 50px;
+      padding: 30px 40px 0;
+    }
+    .ant-tabs-ink-bar{
+      width:20px !important;
+      height:3px;
+      background:rgba(90,120,237,1);
+      border-radius:2px;
+    }
+    .ant-tabs-tab{
+      padding: 8px 0;
+    }
+    .partyBuild{
+      box-sizing: border-box;
+      padding: 0 40px;
+      .progressBlock{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #EEEEEE;
+        path{
+          &:nth-of-type(1){
+            stroke: #F6F9FC !important;
+          }
+        }
+        .progressItem{
+          text-align: center;
+          .ant-progress{
+            margin-bottom: 28px;
+          }
+          p{
+            font-size:18px;
+            line-height:18px;
+            font-weight:400;
+            color:rgba(90,120,237,1);
+          }
+          .ant-progress-text{
+            font-size:36px;
+            font-family:MicrosoftYaHei;
+            font-weight:400;
+          }
+          &:nth-of-type(1){
+            .ant-progress-text,p{
+              color:#5A78ED;
+            }
+          }
+          &:nth-of-type(2){
+            .ant-progress-text,p{
+              color:#FF8453;
+            }
+          }
+          &:nth-of-type(3){
+            .ant-progress-text,p{
+              color:#3ACA5F;
+            }
+          }
+          &:nth-of-type(4){
+            .ant-progress-text,p{
+              color:#8363FD;
+            }
+          }
+        }
+      }
+      .exportBtn{
+        margin-bottom: 30px;
+      }
+    }
+    .sence{
+      box-sizing: border-box;
+      padding-right: 40px;
+      display: flex;
+      justify-content: space-between;
+      .chartBlock{
+        width: 55%;
+      }
+      .tableBlock{
+        width: 40%;
+      }
+    }
+    .AddRank{
+      box-sizing: border-box;
+      padding: 0 40px;
+      .chartBlock{
+        padding: 0 80px;
+      }
+    }
+  }
+}

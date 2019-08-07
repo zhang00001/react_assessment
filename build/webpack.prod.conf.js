@@ -42,7 +42,11 @@ const prod = merge({}, baseConf, {
         })
     },
     plugins: [
-
+        new webpack.DefinePlugin({
+          "process.env": {
+              NODE_ENV: JSON.stringify('production')
+          }
+        }),
         // 抽离css
         new ExtractTextPlugin({
             filename: assetsPath('css/[name].[contenthash].css')

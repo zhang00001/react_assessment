@@ -1,0 +1,75 @@
+@activeColor: #5A78ED;
+
+.aclog {
+  padding         : 40px 60px;
+  min-height      : calc(~"100vh - 118px");
+  .nav {
+    margin-bottom: 20px
+  }
+
+  .content {
+    box-sizing      : border-box;
+    width           : 100%;
+    background      : rgba(255, 255, 255, 1);
+    box-shadow      : 0px 5px 8px 0px rgba(0, 31, 54, 0.03);
+    border-radius   : 8px;
+    padding         : 30px 40px;
+    background-color: #fff;
+
+    .toolsBlock {
+      margin-bottom  : 30px;
+      display        : flex;
+      justify-content: space-between;
+   
+      button {
+        width        : 110px;
+        height       : 36px;
+        border-radius: 4px;
+        font-size    : 14px;
+        font-family  : MicrosoftYaHei;
+        font-weight  : 400;
+        color        : rgba(255, 255, 255, 1);
+        border       : 0;
+        box-sizing: border-box;
+        i{
+          font-size: 14px;
+          margin-right: 6px;
+        }
+      }
+
+      .btn {
+        background: rgba(90, 120, 237, 1);
+      }
+
+      .lessBtn {
+        margin-left: 10px;
+        background : rgba(90, 120, 237, .1);
+        color      : rgba(90, 120, 237, 1);
+      }
+
+      .searchs {
+        display    : flex;
+        align-items: center;
+
+        .searchBtn {
+          background: rgba(255, 132, 83, 1);
+        }
+
+        input,
+        .ant-select-selection {
+          width        : 240px;
+          height       : 36px;
+          line-height  : 36px;
+          background   : rgba(255, 255, 255, 1);
+          border       : 1px solid rgba(221, 221, 221, 1);
+          border-radius: 4px;
+          margin-right : 10px;
+          .ant-select-selection__rendered,.ant-select-selection-selected-value{
+            height: 100%;
+            line-height: 36px;
+          }
+        }
+      }
+    }
+  }
+}
